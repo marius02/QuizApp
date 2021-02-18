@@ -58,11 +58,8 @@
                         android:layout_height="1dp"/>
 
                     <TextView
-                        android:text="History"
-                        android:gravity="center"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        style="@style/topic_textView"
+                        android:text="History"/>
 
                 </LinearLayout>
 
@@ -95,10 +92,7 @@
 
                     <TextView
                         android:text="Geography"
-                        android:gravity="center"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        style="@style/topic_textView"/>
 
                 </LinearLayout>
 
