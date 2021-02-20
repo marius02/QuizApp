@@ -8,6 +8,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:theme="@style/AppTheme.DarkAppBar"
+        android:layout_height="?android:attr/actionBarSize"/>
+
     <TextView
         android:layout_marginTop="20dp"
         android:gravity="center"
@@ -41,6 +49,7 @@
                 android:layout_height="141dp">
 
                 <LinearLayout
+                    android:id="@+id/historyLayout"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -74,6 +83,7 @@
                 android:layout_height="141dp">
 
                 <LinearLayout
+                    android:id="@+id/geographyLayout"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -111,6 +121,7 @@
                 android:layout_height="141dp">
 
                 <LinearLayout
+                    android:id="@+id/spaceLayout"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -148,6 +159,7 @@
                 android:layout_height="141dp">
 
                 <LinearLayout
+                    android:id="@+id/engineeringLayout"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -188,6 +200,7 @@
                 android:layout_height="141dp">
 
                 <LinearLayout
+                    android:id="@+id/programmingLayout"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -225,6 +238,7 @@
                 android:layout_height="141dp">
 
                 <LinearLayout
+                    android:id="@+id/businessLayout"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
