@@ -35,6 +35,7 @@ namespace QuizApp
             _toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout);
             _navigationView = FindViewById<NavigationView>(Resource.Id.navView);
+            _navigationView.NavigationItemSelected += NavigationViewOnNavigationItemSelected;
 
             //Setup toolbar
             SetSupportActionBar(_toolbar);
@@ -61,46 +62,68 @@ namespace QuizApp
             _businessLayout.Click += BusinessLayoutOnClick;
         }
 
+        private void NavigationViewOnNavigationItemSelected(object sender, NavigationView.NavigationItemSelectedEventArgs e)
+        {
+            if (e.MenuItem.ItemId == Resource.Id.navHistory)
+            {
+                InitHistory();
+                _drawerLayout.CloseDrawers();
+            }
+            else if (e.MenuItem.ItemId == Resource.Id.navGeography)
+            {
+               InitGeography();
+               _drawerLayout.CloseDrawers();
+            }
+            else if (e.MenuItem.ItemId == Resource.Id.navSpace)
+            {
+                InitSpace();
+                _drawerLayout.CloseDrawers();
+            }
+            else if (e.MenuItem.ItemId == Resource.Id.navProgramming)
+            {
+                InitProgramming();
+                _drawerLayout.CloseDrawers();
+            }
+            else if (e.MenuItem.ItemId == Resource.Id.navBusiness)
+            {
+                InitBusiness();
+                _drawerLayout.CloseDrawers();
+            }
+            else if (e.MenuItem.ItemId == Resource.Id.navEngineering)
+            {
+                InitEngineering();
+                _drawerLayout.CloseDrawers();
+            }
+        }
+
         private void BusinessLayoutOnClick(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(QuizDescriptionActivity));
-            intent.PutExtra("topic", "Business");
-            StartActivity(intent);
+            InitBusiness();
         }
 
         private void ProgrammingLayoutOnClick(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(QuizDescriptionActivity));
-            intent.PutExtra("topic", "Programming");
-            StartActivity(intent);
+            InitProgramming();
         }
 
         private void EngineeringLayoutOnClick(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(QuizDescriptionActivity));
-            intent.PutExtra("topic", "Engineering");
-            StartActivity(intent);
+            InitEngineering();
         }
 
         private void GeographyLayoutOnClick(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(QuizDescriptionActivity));
-            intent.PutExtra("topic", "Geography");
-            StartActivity(intent);
+            InitGeography();
         }
 
         private void SpaceLayoutOnClick(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(QuizDescriptionActivity));
-            intent.PutExtra("topic", "Space");
-            StartActivity(intent);
+            InitSpace();
         }
 
         private void HistoryLayoutOnClick(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(QuizDescriptionActivity));
-            intent.PutExtra("topic", "History");
-            StartActivity(intent);
+            InitHistory();
         }
 
         public override bool OnOptionsItemSelected(IMenuItem? item)
@@ -113,6 +136,48 @@ namespace QuizApp
                 default:
                     return base.OnOptionsItemSelected(item);
             }
+        }
+
+        private void InitBusiness()
+        {
+            var intent = new Intent(this, typeof(QuizDescriptionActivity));
+            intent.PutExtra("topic", "Business");
+            StartActivity(intent);
+        }
+
+        private void InitProgramming()
+        {
+            var intent = new Intent(this, typeof(QuizDescriptionActivity));
+            intent.PutExtra("topic", "Programming");
+            StartActivity(intent);
+        }
+
+        private void InitHistory()
+        {
+            var intent = new Intent(this, typeof(QuizDescriptionActivity));
+            intent.PutExtra("topic", "History");
+            StartActivity(intent);
+        }
+
+        private void InitSpace()
+        {
+            var intent = new Intent(this, typeof(QuizDescriptionActivity));
+            intent.PutExtra("topic", "Space");
+            StartActivity(intent);
+        }
+
+        private void InitEngineering()
+        {
+            var intent = new Intent(this, typeof(QuizDescriptionActivity));
+            intent.PutExtra("topic", "Engineering");
+            StartActivity(intent);
+        }
+
+        private void InitGeography()
+        {
+            var intent = new Intent(this, typeof(QuizDescriptionActivity));
+            intent.PutExtra("topic", "Geography");
+            StartActivity(intent);
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Android.Support.V7.App;
+using QuizApp.Resources;
 
 namespace QuizApp.Activities
 {
@@ -37,6 +38,9 @@ namespace QuizApp.Activities
             _quizTopic = Intent?.GetStringExtra("topic");
             _quizTopicTextView.Text = _quizTopic;
             _quizImageView.SetImageResource(GetImage(_quizTopic));
+
+            var quizHelper = new QuizHelper();
+            _descriptionTextView.Text = quizHelper.GetTopicDescription(_quizTopic);
         }
 
         public int GetImage(string topic)
